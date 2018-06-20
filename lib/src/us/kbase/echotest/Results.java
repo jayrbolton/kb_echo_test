@@ -20,7 +20,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @Generated("com.googlecode.jsonschema2pojo")
 @JsonPropertyOrder({
     "report_name",
-    "report_ref"
+    "report_ref",
+    "message"
 })
 public class Results {
 
@@ -28,6 +29,8 @@ public class Results {
     private String reportName;
     @JsonProperty("report_ref")
     private String reportRef;
+    @JsonProperty("message")
+    private String message;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @JsonProperty("report_name")
@@ -60,6 +63,21 @@ public class Results {
         return this;
     }
 
+    @JsonProperty("message")
+    public String getMessage() {
+        return message;
+    }
+
+    @JsonProperty("message")
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public Results withMessage(String message) {
+        this.message = message;
+        return this;
+    }
+
     @JsonAnyGetter
     public Map<String, Object> getAdditionalProperties() {
         return this.additionalProperties;
@@ -72,7 +90,7 @@ public class Results {
 
     @Override
     public String toString() {
-        return ((((((("Results"+" [reportName=")+ reportName)+", reportRef=")+ reportRef)+", additionalProperties=")+ additionalProperties)+"]");
+        return ((((((((("Results"+" [reportName=")+ reportName)+", reportRef=")+ reportRef)+", message=")+ message)+", additionalProperties=")+ additionalProperties)+"]");
     }
 
 }

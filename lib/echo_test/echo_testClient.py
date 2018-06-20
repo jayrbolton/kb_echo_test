@@ -38,7 +38,8 @@ class echo_test(object):
         :param params: instance of type "Params" -> structure: parameter
            "message" of String, parameter "workspace_name" of String
         :returns: instance of type "Results" -> structure: parameter
-           "report_name" of String, parameter "report_ref" of String
+           "report_name" of String, parameter "report_ref" of String,
+           parameter "message" of String
         """
         return self._client.call_method(
             'echo_test.echo',

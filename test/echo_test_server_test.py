@@ -81,4 +81,4 @@ class echo_testTest(unittest.TestCase):
             'workspace_name': self.getWsName()
         })
         self.assertEqual(result[0]['report_name'], 'echo_response')
-        pass
+        self.assertEqual(result[0]['message'], 'xyzxyz')

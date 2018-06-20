@@ -12,6 +12,7 @@ module echo_test {
     typedef structure {
         string report_name;
         string report_ref;
+        string message;
     } Results;
 
     funcdef echo(Params params) returns (Results results) authentication required;

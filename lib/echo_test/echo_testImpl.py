@@ -22,7 +22,7 @@ class echo_test:
     ######################################### noqa
     VERSION = "0.0.1"
     GIT_URL = ""
-    GIT_COMMIT_HASH = ""
+    GIT_COMMIT_HASH = "09798e83e6a36a7db09133fae5d75892deaa6f8c"
 
     #BEGIN_CLASS_HEADER
     #END_CLASS_HEADER
@@ -41,7 +41,8 @@ class echo_test:
         :param params: instance of type "Params" -> structure: parameter
            "message" of String, parameter "workspace_name" of String
         :returns: instance of type "Results" -> structure: parameter
-           "report_name" of String, parameter "report_ref" of String
+           "report_name" of String, parameter "report_ref" of String,
+           parameter "message" of String
         """
         # ctx is the context object
         # return variables are: results
@@ -55,7 +56,8 @@ class echo_test:
         })
         results = {
             'report_name': report['name'],
-            'report_ref': report['ref']
+            'report_ref': report['ref'],
+            'message': params.get('message', '')
         }
         #END echo
 
