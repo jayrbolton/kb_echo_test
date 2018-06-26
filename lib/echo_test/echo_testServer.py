@@ -337,6 +337,10 @@ class Application(object):
                              name='echo_test.echo',
                              types=[dict])
         self.method_authentication['echo_test.echo'] = 'required'  # noqa
+        self.rpc_service.add(impl_echo_test.echo_fail,
+                             name='echo_test.echo_fail',
+                             types=[dict])
+        self.method_authentication['echo_test.echo_fail'] = 'required'  # noqa
         self.rpc_service.add(impl_echo_test.status,
                              name='echo_test.status',
                              types=[dict])

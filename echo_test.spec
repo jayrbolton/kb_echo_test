@@ -16,4 +16,7 @@ module echo_test {
     } Results;
 
     funcdef echo(Params params) returns (Results results) authentication required;
+
+    /* Function that always throws an exception for testing job failures */
+    funcdef echo_fail(Params params) returns (Results results) authentication required;
 };

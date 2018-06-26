@@ -22,7 +22,7 @@ class echo_test:
     ######################################### noqa
     VERSION = "0.0.1"
     GIT_URL = ""
-    GIT_COMMIT_HASH = "09798e83e6a36a7db09133fae5d75892deaa6f8c"
+    GIT_COMMIT_HASH = "4b5a37e6fed857c199df65191ba3344a467b8aab"
 
     #BEGIN_CLASS_HEADER
     #END_CLASS_HEADER
@@ -64,6 +64,29 @@ class echo_test:
         # At some point might do deeper type checking...
         if not isinstance(results, dict):
             raise ValueError('Method echo return value ' +
+                             'results is not type dict as required.')
+        # return the results
+        return [results]
+
+    def echo_fail(self, ctx, params):
+        """
+        Function that always throws an exception for testing job failures
+        :param params: instance of type "Params" -> structure: parameter
+           "message" of String, parameter "workspace_name" of String
+        :returns: instance of type "Results" -> structure: parameter
+           "report_name" of String, parameter "report_ref" of String,
+           parameter "message" of String
+        """
+        # ctx is the context object
+        # return variables are: results
+        #BEGIN echo_fail
+        results = {}
+        raise ValueError()
+        #END echo_fail
+
+        # At some point might do deeper type checking...
+        if not isinstance(results, dict):
+            raise ValueError('Method echo_fail return value ' +
                              'results is not type dict as required.')
         # return the results
         return [results]

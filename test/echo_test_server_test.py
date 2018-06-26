@@ -3,13 +3,9 @@ import unittest
 import os  # noqa: F401
 import json  # noqa: F401
 import time
-import requests
 
 from os import environ
-try:
-    from ConfigParser import ConfigParser  # py2
-except:
-    from configparser import ConfigParser  # py3
+from ConfigParser import ConfigParser  # py2
 
 from pprint import pprint  # noqa: F401
 
@@ -82,3 +78,10 @@ class echo_testTest(unittest.TestCase):
         })
         self.assertEqual(result[0]['report_name'], 'echo_response')
         self.assertEqual(result[0]['message'], 'xyzxyz')
+
+    def test_echo_fail(self):
+        with self.assertRaises(ValueError):
+            self.getImpl().echo_fail(self.getContext(), {
+                'message': 'xyz',
+                'workspace_name': self.getWsName()
+            })
