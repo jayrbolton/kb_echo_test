@@ -52,7 +52,7 @@ class echo_test:
         report_client = KBaseReport(self.callback_url)
         html_path = os.path.join(self.scratch, 'index.html')
         with open(html_path, 'w') as fd:
-            fd.write('<blink>Hello world from html_link file</blink>')
+            fd.write('<html><body><blink>Hello world from html_link file</blink></body></html>')
         report = report_client.create_extended_report({
             'message': params.get('message', ''),
             'direct_html': '<marquee>Hello world from direct_html</marquee>',
