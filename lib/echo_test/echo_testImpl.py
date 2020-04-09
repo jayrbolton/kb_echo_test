@@ -56,7 +56,7 @@ class echo_test:
         report = report_client.create_extended_report({
             'message': params.get('message', ''),
             'direct_html': '<marquee>Hello world from direct_html</marquee>',
-            'html_links': [{'name': 'index', 'path': html_path}],
+            'html_links': [{'name': 'index.html', 'path': html_path}],
             'direct_html_link_index': 0,
             'workspace_name': ws_name,
             'report_object_name': 'echo_response'
