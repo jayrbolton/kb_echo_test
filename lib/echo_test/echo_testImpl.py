@@ -32,6 +32,7 @@ class echo_test:
     def __init__(self, config):
         #BEGIN_CONSTRUCTOR
         self.callback_url = os.environ['SDK_CALLBACK_URL']
+        self.scratch = config['scratch']
         #END_CONSTRUCTOR
         pass
 
@@ -49,8 +50,14 @@ class echo_test:
         #BEGIN echo
         ws_name = params['workspace_name']
         report_client = KBaseReport(self.callback_url)
+        html_path = os.path.join(self.scratch, 'index.html')
+        with open(html_path, 'w') as fd:
+            fd.write('<blink>Hello world from html_link file</blink>')
         report = report_client.create_extended_report({
             'message': params.get('message', ''),
+            'direct_html': '<marquee>Hello world from direct_html</marquee>',
+            'html_links': [{'name': 'index', 'path': html_path}],
+            'direct_html_link_index': 0,
             'workspace_name': ws_name,
             'report_object_name': 'echo_response'
         })
